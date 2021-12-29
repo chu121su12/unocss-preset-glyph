@@ -1,12 +1,12 @@
-# unocss-preset-glyphs
+# unocss-preset-glyph
 
 Embed subset of glyphs from fonts for [UnoCSS](https://github.com/antfu/unocss).
 
 ## Installation
 
 ```sh
-npm i unocss-preset-glyphs unocss --save-dev
-pnpm add unocss-preset-glyphs unocss -D
+npm i unocss-preset-glyph unocss --save-dev
+pnpm add unocss-preset-glyph unocss -D
 ```
 
 ## Usage
@@ -14,12 +14,12 @@ pnpm add unocss-preset-glyphs unocss -D
 ```js
 // unocss.config.js
 import { presetUno, defineConfig } from 'unocss'
-import { presetGlyphs } from 'unocss-preset-glyphs'
+import { presetGlyph } from 'unocss-preset-glyph'
 
 export default defineConfig({
   presets: [
     presetUno(), // required
-    presetGlyphs({
+    presetGlyph({
         fonts: {
             comicsans: '/path/to/comicsans.ttf',
             // ...

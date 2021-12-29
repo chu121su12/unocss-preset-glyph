@@ -1,4 +1,4 @@
-export interface GlyphsOptions {
+export interface GlyphOptions {
   /**
    * List of font and its path.
    *

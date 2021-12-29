@@ -16,7 +16,7 @@
     "declarationDir": "./temp",
     "emitDeclarationOnly": true,
     "paths": {
-      "unocss-preset-glyphs": ["./src"]
+      "unocss-preset-glyph": ["./src"]
     }
   },
   "include": ["./src/**/*.ts", "./tests/**/*"],

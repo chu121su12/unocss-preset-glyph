@@ -1,11 +1,11 @@
 import type { CSSValues, Preset } from '@unocss/core'
 import { warnOnce } from '@unocss/core'
 import { subsetFont } from './utils'
-import type { GlyphsOptions } from './types'
+import type { GlyphOptions } from './types'
 
-export { GlyphsOptions }
+export { GlyphOptions }
 
-export const presetGlyphs = (options: GlyphsOptions = {}): Preset => {
+export const presetGlyph = (options: GlyphOptions = {}): Preset => {
   const {
     prefix = 'g-',
     warn = false,
@@ -16,7 +16,7 @@ export const presetGlyphs = (options: GlyphsOptions = {}): Preset => {
   const fontNameMap: Record<string, string> = {}
 
   return {
-    name: '@unocss/preset-glyphs',
+    name: 'unocss-preset-glyph',
     enforce: 'pre',
     options,
     layers: {
@@ -76,4 +76,4 @@ export const presetGlyphs = (options: GlyphsOptions = {}): Preset => {
   }
 }
 
-export default presetGlyphs
+export default presetGlyph
