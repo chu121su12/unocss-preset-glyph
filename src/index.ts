@@ -1,10 +1,39 @@
 import type { CSSValues, Preset } from '@unocss/core'
 import { warnOnce } from '@unocss/core'
 import { subsetFont } from './utils'
-import type { GlyphOptions } from './types'
 
-export { GlyphOptions }
+/**
+ * @public
+ */
+export interface GlyphOptions {
+  /**
+   * List of font and its path.
+   *
+   */
+  fonts?: Record<string, string>
+  /**
+   * Class prefix for matching glyph rules.
+   *
+   * @default `g-`
+   */
+  prefix?: string
+  /**
+   * Emit warning when font/glyph cannot be resolved.
+   *
+   * @default false
+   */
+  warn?: boolean
+  /**
+   * Rule layer
+   *
+   * @default 'glyphs'
+   */
+  layer?: string
+}
 
+/**
+ * @public
+ */
 export const presetGlyph = (options: GlyphOptions = {}): Preset => {
   const {
     prefix = 'g-',
@@ -75,5 +104,3 @@ export const presetGlyph = (options: GlyphOptions = {}): Preset => {
     ]],
   }
 }
-
-export default presetGlyph

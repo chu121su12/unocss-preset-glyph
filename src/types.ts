@@ -1,3 +1,6 @@
+/**
+ * @public
+ */
 export interface GlyphOptions {
   /**
    * List of font and its path.
