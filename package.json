@@ -1,6 +1,6 @@
 {
   "name": "unocss-preset-glyph",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "UnoCSS preset for embedding subset of glyphs from fonts",
   "engines": {
     "node": ">=14.18"
