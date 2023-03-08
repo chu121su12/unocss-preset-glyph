@@ -1,12 +1,24 @@
 # unocss-preset-glyph
 
-Embed subset of glyphs from fonts for [UnoCSS](https://github.com/antfu/unocss).
+<p>
+  <a href="https://npmjs.com/package/unocss-preset-glyph" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.shields.io/npm/v/unocss-preset-glyph" alt="npm version">
+  </a>
+  <a href="https://nodejs.org/en/about/releases/" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.shields.io/node/v/unocss-preset-glyph" alt="node version">
+  </a>
+</p>
+
+> Glyph subsetter for UnoCSS
+
+Embed subset of glyphs from fonts.
 
 ## Installation
 
 ```sh
-npm i unocss-preset-glyph unocss --save-dev
-pnpm add unocss-preset-glyph unocss -D
+npm i unocss-preset-glyph unocss --save-dev # with npm
+yarn add unocss-preset-glyph unocss -D # with yarn
+pnpm add unocss-preset-glyph unocss -D # with pnpm
 ```
 
 ## Usage
@@ -18,21 +30,66 @@ import { presetGlyph } from 'unocss-preset-glyph'
 
 export default defineConfig({
   presets: [
-    presetUno(), // required
     presetGlyph({
-        fonts: {
-            comicsans: '/path/to/comicsans.ttf',
-            // ...
-        },
+      fonts: {
+        'fontname': 'path/to/font.woff',
+        alias: 'path/to/original-name.otf',
+      },
     }),
+    // presetUno(),
   ],
 })
 ```
 
-```html
-<h1 class="g-comicsans-uno hover:g-comicsans-cs">UnoCSS</h1>
+## Utilities
+
+- Shorthand gradient + stops:
+
+  `g-<font item>-<glpyhs>`
+
+  Where:
+
+  - `<font item>` is key in `fonts` config.
+  - `<glpyhs>` is list of glyph/character to be subsetted.
+
+### Type of `GlyphOptions`
+
+```ts
+export interface GlyphOptions {
+  /**
+   * List of font and its path.
+   *
+   */
+  fonts?: Record<string, string>
+  /**
+   * Class prefix for matching glyph rules.
+   *
+   * @default `g-`
+   */
+  prefix?: string
+  /**
+   * Rule layer
+   *
+   * @default 'glyphs'
+   */
+  layer?: string
+  /**
+   * Prefix for font-family declaration.
+   *
+   * @default `un-`
+   */
+  familyPrefix?: string
+}
 ```
+
+## Known Issue
+
+- Using woff2 font often result in invalid font payload. Please use woff file insted.
 
 ## License
 
 MIT
+
+## Demo
+
+Clone the repo, run `pnpm dev`.

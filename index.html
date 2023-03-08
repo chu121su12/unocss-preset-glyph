@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UnoCSS Preset Glyph</title>
+    <link
+      rel="icon"
+      href="https://raw.githubusercontent.com/antfu/unocss/main/playground/public/favicon.svg"
+      type="image/svg+xml"
+    />
+  </head>
+
+  <body class="bg-white font-sans m-0 py-6 px-4 antialiased prose mx-auto">
+    <main class="mx-auto text-base">
+      <a
+        href="https://github.com/chu121su12/unocss-preset-glyph"
+        target="_blank"
+        rel="noopener noreferrer"
+        >GitHub</a
+      >
+      <div id="readme"></div>
+
+      <div class="border-4 border-gray-200 rounded-lg px-8 py-4">
+        <code class="!ws-normal before:-ml-1ch">g-inter-uno hover:g-inconsolata-cs</code>
+        <div class="
+          mt-1 mb-4 rounded-md shadow-lg py-6 text-center ring-4 relative
+          g-inter-uno
+          hover:g-inconsolata-cs
+        ">
+          <div class="absolute top-0 left-0 [font-family:initial] text-[8pt]">hover this box</div>
+          <span class="text-[22pt]">uno css</span>
+        </div>
+      </div>
+    </main>
+
+    <script src="https://unpkg.com/shiki"></script>
+    <script type="module">
+      import 'uno.css'
+      import { marked } from 'marked'
+      import readme from './README.md?raw'
+
+      document.getElementById('readme').innerHTML = marked.parse(readme, {
+        langPrefix: '',
+      })
+
+      const preBlocks = document.querySelectorAll('pre')
+
+      shiki
+        .getHighlighter({
+          theme: 'material-palenight',
+          langs: ['html', 'sh', 'js', 'ts'],
+        })
+        .then((hl) => {
+          for (const block of preBlocks) {
+            block.outerHTML = hl.codeToHtml(
+              block.textContent,
+              block.firstElementChild.className || 'text',
+            )
+          }
+        })
+    </script>
+  </body>
+</html>

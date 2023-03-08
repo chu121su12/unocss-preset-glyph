@@ -1,28 +1,37 @@
 {
   "name": "unocss-preset-glyph",
-  "version": "0.0.6",
+  "version": "0.1.0",
   "description": "UnoCSS preset for embedding subset of glyphs from fonts",
   "engines": {
     "node": ">=14.18"
   },
   "type": "module",
+  "types": "./dist/index.d.ts",
+  "exports": "./dist/index.js",
   "files": [
-    "src"
+    "dist"
   ],
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "build-demo": "vite build --mode demo",
+    "test": "vitest",
+    "test:update": "vitest -u",
     "release": "npx bumpp package.json --commit \"release: v\" --push --tag"
   },
   "devDependencies": {
-    "@types/node": "^17.0.5",
+    "@types/estree": "^1.0.0",
+    "@types/node": "^18.14.6",
     "fontmin": "^0.9.9",
-    "typescript": "^4.5.4",
-    "unocss": "^0.20.0",
-    "vite": "^2.7.9"
-  },
-  "peerDependencies": {
-    "unocss": "^0.20.0"
+    "inconsolata": "^0.0.2",
+    "inter-ui": "^3.19.3",
+    "marked": "^4.2.12",
+    "typescript": "^4.9.5",
+    "unocss": "^0.50.4",
+    "vite": "^4.1.4",
+    "vitest": "^0.29.2",
+    "wawoff2": "^2.0.1",
+    "woff2sfnt-sfnt2woff": "^1.0.0"
   },
   "repository": {
     "type": "git",
@@ -30,13 +39,13 @@
   },
   "keywords": [
     "unocss",
-    "preset",
-    "font"
+    "fontmin",
+    "font subset"
   ],
   "author": "Saya",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/chu121su12/unocss-preset-glyph/issues"
   },
-  "homepage": "https://github.com/chu121su12/unocss-preset-glyph#readme"
+  "homepage": "https://github.com/chu121su12/unocss-preset-glyph"
 }
