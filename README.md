@@ -51,9 +51,7 @@ html:
 
 ## Utilities
 
-- Shorthand gradient + stops:
-
-  `g-<font item>-<glyphs>`
+- `g-<font item>-<glyphs>`
 
   Where:
 
@@ -90,7 +88,7 @@ export interface GlyphOptions {
 }
 ```
 
-## Known Issue
+## Known Issues
 
 - Using woff2 font often result in invalid font payload. Please use woff file insted.
 
