@@ -23,6 +23,7 @@ pnpm add unocss-preset-glyph unocss -D # with pnpm
 
 ## Usage
 
+js:
 ```js
 // unocss.config.js
 import { presetUno, defineConfig } from 'unocss'
@@ -39,6 +40,13 @@ export default defineConfig({
     // presetUno(),
   ],
 })
+```
+
+html:
+```html
+<div class="g-fontname-uno g-alias-cs">
+  uno css
+</div>
 ```
 
 ## Utilities
