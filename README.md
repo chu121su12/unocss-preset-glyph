@@ -53,12 +53,12 @@ html:
 
 - Shorthand gradient + stops:
 
-  `g-<font item>-<glpyhs>`
+  `g-<font item>-<glyphs>`
 
   Where:
 
   - `<font item>` is key in `fonts` config.
-  - `<glpyhs>` is list of glyph/character to be subsetted.
+  - `<glyphs>` is list of glyph/character to be subsetted.
 
 ### Type of `GlyphOptions`
 
